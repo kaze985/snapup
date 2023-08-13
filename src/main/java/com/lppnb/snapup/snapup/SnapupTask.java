@@ -19,9 +19,9 @@ public class SnapupTask {
         // 账号密码登录
         driver.findElement(By.cssSelector("#hp-pass-box > div > div.hp-main-oauth > button.hp-button-text.hp-button-cc.hp-login-btn.hp-account-login")).click();
         // 输入账号
-        driver.findElement(By.cssSelector("#nameInput")).sendKeys("18836215105");
+        driver.findElement(By.cssSelector("#nameInput")).sendKeys("*");
         // 输入密码
-        driver.findElement(By.cssSelector("#passInput")).sendKeys("LPP9817815");
+        driver.findElement(By.cssSelector("#passInput")).sendKeys("*");
         Thread.sleep(1000);
         // 同意协议
         driver.findElement(By.cssSelector("#hp-pass-box > div > div.hp-login-account > div.agree-container > div > button > i")).click();
