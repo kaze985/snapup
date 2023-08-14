@@ -1,4 +1,4 @@
-package com.lppnb.snapup.snapup;
+package com.lppnb.snapup.snapup.selenium;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,8 +12,14 @@ public class ChromeDriverConfig {
     @Bean
     public ChromeDriver driver() {
         ChromeOptions chromeOptions = new ChromeOptions();
+        //窗口最大化
+//        chromeOptions.addArguments("--start-maximized");
         //解决 403 出错问题
         chromeOptions.addArguments("--remote-allow-origins=*");
+        //无头化
+        chromeOptions.addArguments("--headless");
+        //防止浏览器渲染后元素之间遮挡，这里直接给个比较大的窗口大小
+        chromeOptions.addArguments("--window-size=1920,1080");
         ChromeDriver driver = new ChromeDriver(chromeOptions);
         //页面加载超时时间设置为 5s
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
