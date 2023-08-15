@@ -36,7 +36,9 @@ public class SeleniumSnapupTask {
     }
 
     @Scheduled(cron = "00 20 19 * * *")
-    public void snapUp() {
+    public void snapUp() throws InterruptedException {
+        long start = System.currentTimeMillis();
+
         log.info("开始抢购");
 
         // 立即报名
@@ -55,5 +57,9 @@ public class SeleniumSnapupTask {
         log.info("立即支付");
 
         log.info("抢购完毕");
+
+        long end = System.currentTimeMillis();
+        log.info("抢购共用时：{}ms", (end - start));
+        Thread.sleep(3000);
     }
 }
